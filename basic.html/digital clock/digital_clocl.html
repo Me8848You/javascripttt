@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cllllloookkkk</title>
+    <style>
+        #alpha{
+            height: 200px;
+            width: 300px;
+            background-color: rgb(0, 240, 220);
+            border: 2px solid black;
+            border-radius: 5px;
+            position: relative;
+            top: 235px;
+            left: 500px;
+            font-size: 65px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            vertical-align: center;
+            animation-name: example;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes example{
+            From{color:rgb(255, 0, 0); }
+            To{color: rgb(227, 252, 0);}
+        }
+        body{
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div id="alpha" >
+
+
+    </div>
+    <script>
+        function FindTime()
+        {
+            var time=new Date();
+            hr=time.getHours();
+            min=time.getMinutes();
+            sec=time.getSeconds();
+            
+            if(hr==0)
+            {
+                hr=12;
+            }
+            else if(hr>12)
+            {
+                hr=hr-12;
+            }
+            if(hr<10)
+            {
+                hr='0'+hr;
+            }
+            if(min<10)
+            {
+                min='0'+min;
+            }
+            if(sec<10)
+            {
+                sec='0'+sec;
+            }
+
+            var beta=document.getElementById("alpha");
+            beta.innerHTML=hr + ':'+ min+':'+sec;
+        }
+        setInterval(FindTime,1000);
+    </script>
+</body>
+</html>
